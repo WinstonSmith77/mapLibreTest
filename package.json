@@ -12,6 +12,7 @@
     "vite": "^5.1.6"
   },
   "dependencies": {
-    "mapbox-gl-ogc-feature-collection": "^0.0.3"
+    "mapbox-gl-ogc-feature-collection": "^0.0.3",
+    "maplibre-gl": "^4.1.0"
   }
 }
