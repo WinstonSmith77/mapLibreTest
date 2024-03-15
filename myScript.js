@@ -1,5 +1,5 @@
 import OGCFeatureCollection from 'mapbox-gl-ogc-feature-collection'
-import { Map, TerrainControl, NavigationControl } from 'maplibre-gl';
+import { Map, TerrainControl, NavigationControl, Marker } from 'maplibre-gl';
 import 'maplibre-gl/dist/maplibre-gl.css'
 
 
@@ -72,7 +72,7 @@ function doIt() {
         //map['showOverdrawInspector'] = value;
     }
 
-    const marker = new maplibregl.Marker()
+    const marker = new Marker()
         .setLngLat([7.134450017743774, 50.71797656847229])
         .addTo(map);
 
