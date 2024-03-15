@@ -1,0 +1,17 @@
+{
+  "name": "maplibretest",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "vite": "^5.1.6"
+  },
+  "dependencies": {
+    "mapbox-gl-ogc-feature-collection": "^0.0.3"
+  }
+}
