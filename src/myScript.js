@@ -1,12 +1,19 @@
 import OGCFeatureCollection from 'mapbox-gl-ogc-feature-collection'
 import { Map, TerrainControl, NavigationControl, Marker } from 'maplibre-gl';
 import 'maplibre-gl/dist/maplibre-gl.css'
-import styleFile from './assets/grp_ags23.json'
-//import styleFile from './assets/bm_web_col.json'
+
+//import styleFile from './assets/test.json'
+//import styleFile from './assets/grp_ags23.json'
+//import styleFile from './assets/grp_ags23_neu.json'
+
+
+import styleFile from './assets/bm_web_col.json'
 
 
 function doIt() {
     //const styleFile = styleToUse
+
+    //const styleFile = 'https://maps.infas-lt.de/maps/05ca1656-c77f-4f11-ad88-724aefbe79ed/prerelease/styles/grp_de_ags_demo?f=application%2Fvnd.mapbox.style%2Bjson'
     
     const map = new Map({
         container: 'map',
@@ -46,7 +53,7 @@ function doIt() {
         label.innerHTML = id
         group.append(label)
 
-        function addButton(name, event, getValue) {
+        function addButton(name, eventOnClick, getValue) {
 
             function getText() {
                 return name + ' ' + getValue();
@@ -56,7 +63,7 @@ function doIt() {
             newButton.innerHTML = getText()
             group.append(newButton)
             const eventWrapper = function () {
-                event();
+                eventOnClick();
                 newButton.innerHTML = getText();
             };
             newButton.addEventListener('click', eventWrapper);
