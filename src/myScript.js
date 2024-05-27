@@ -1,6 +1,8 @@
 import OGCFeatureCollection from 'mapbox-gl-ogc-feature-collection'
 import { Map, TerrainControl, NavigationControl, Marker } from 'maplibre-gl';
-import 'maplibre-gl/dist/maplibre-gl.css'
+//import 'maplibre-gl/dist/maplibre-gl.css'
+import '../../maplibre/maplibre-gl-js/dist/maplibre-gl.css'
+import '../../maplibre/maplibre-gl-js/dist/maplibre-gl.js'
 
 //import styleFile from './assets/test.json'
 //import styleFile from './assets/grp_ags23.json'
