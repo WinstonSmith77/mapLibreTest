@@ -1,8 +1,9 @@
 import OGCFeatureCollection from 'mapbox-gl-ogc-feature-collection'
-import { Map, TerrainControl, NavigationControl, Marker } from 'maplibre-gl';
+import '../../maplibre/maplibre-gl-js/dist/maplibre-gl-dev.js';
+
 //import 'maplibre-gl/dist/maplibre-gl.css'
 import '../../maplibre/maplibre-gl-js/dist/maplibre-gl.css'
-import '../../maplibre/maplibre-gl-js/dist/maplibre-gl.js'
+//import '../../maplibre/maplibre-gl-js/dist/maplibre-gl.js'
 
 //import styleFile from './assets/test.json'
 //import styleFile from './assets/grp_ags23.json'
@@ -17,7 +18,7 @@ function doIt() {
 
     //const styleFile = 'https://maps.infas-lt.de/maps/05ca1656-c77f-4f11-ad88-724aefbe79ed/prerelease/styles/grp_de_ags_demo?f=application%2Fvnd.mapbox.style%2Bjson'
     
-    const map = new Map({
+    const map = new maplibregl.Map({
         container: 'map',
         style: styleFile, // stylesheet location
         center: [10, 53], // starting position [lng, lat]
@@ -29,7 +30,7 @@ function doIt() {
 
     // Add controls (optional)
     map.addControl(
-        new NavigationControl({
+        new maplibregl.NavigationControl({
             visualizePitch: true,
             showZoom: true,
             showCompass: true
@@ -37,7 +38,7 @@ function doIt() {
     );
 
     map.addControl(
-        new TerrainControl({
+        new maplibregl.TerrainControl({
             source: 'terrainSource',
             exaggeration: 1
         })
@@ -88,7 +89,7 @@ function doIt() {
 
     function updateZoom(zoomInfo){
         const zoom =  map.getZoom()
-        console.log('Zoom level changed:', zoom);
+        //console.log('Zoom level changed:', zoom);
         zoomInfo.innerText = 'Zoom level =' + zoom;
     }
 
@@ -102,7 +103,7 @@ function doIt() {
         //map['showOverdrawInspector'] = value;
     }
 
-    const marker = new Marker()
+    const marker = new maplibregl.Marker()
         .setLngLat([7.134450017743774, 50.71797656847229])
         .addTo(map);
 
