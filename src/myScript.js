@@ -8,6 +8,7 @@ import '../../maplibre/maplibre-gl-js/dist/maplibre-gl.css'
 //import styleFile from './assets/test.json'
 //import styleFile from './assets/grp_ags23.json'
 //import styleFile from './assets/grp_ags23_neu.json'
+//http://localhost:5173/@fs/C:/Users/henning/source/maplibre/maplibre-gl-js/dist/maplibre-gl-dev.js.map
 
 
 import styleFile from './assets/bm_web_col.json'
@@ -24,6 +25,7 @@ function doIt() {
         center: [10, 53], // starting position [lng, lat]
         zoom: 6, // starting zoom
         maplibreLogo: true,
+        bounds: [8.835939428940776, 53.01755485151608, 8.873903545232366, 53.045744637060494],
     });
 
    
@@ -75,22 +77,28 @@ function doIt() {
         addButton('toogle', function () { toogleValue(id); }, function () { return getValue(id); });
         if(isFirst){
             const zoomInfo = document.createElement("div");
+            const boundsInfo = document.createElement("div");
+
             group.append(zoomInfo);
-            updateZoom(zoomInfo)
+            group.append(boundsInfo);
+            updateZoom(zoomInfo, boundsInfo)
 
             map.on('zoom', () => {
                 // Your custom logic here
-                updateZoom(zoomInfo)
+                updateZoom(zoomInfo, boundsInfo)
                 // You can perform any actions based on the new zoom level
             });
         }
     
     }
 
-    function updateZoom(zoomInfo){
+    function updateZoom(zoomInfo, boundsInfo){
         const zoom =  map.getZoom()
+        //const bounds = map.getBounds()
+       
         //console.log('Zoom level changed:', zoom);
         zoomInfo.innerText = 'Zoom level =' + zoom;
+        //boundsInfo.innerText = 'Zoom level =' + bounds;
     }
 
     function getValue(id) {
